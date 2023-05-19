@@ -1,0 +1,8 @@
+celery
+flask
+flask-cors
+gunicorn
+python-dotenv
+openai
+python-dotenv
+redis

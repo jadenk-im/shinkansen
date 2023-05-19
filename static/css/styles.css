@@ -1,0 +1,268 @@
+@font-face {
+  font-family: 'DIN2014';
+  src: url('../fonts/DIN2014-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'DIN2014', sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+}
+
+#input-area {
+  z-index: 999;
+  width: calc(100% - 96px);
+  max-width: 600px;
+  border-radius: 8px;
+  background-color: #212121;
+  box-shadow: 0 48px 32px 72px #000000;
+  position: fixed;
+  bottom: 48px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+textarea {
+  overflow: hidden;
+  resize: none;
+  line-height: 1;
+  word-wrap: break-word;
+}
+
+#input {
+  font-family: 'DIN2014', sans-serif;
+  text-transform: uppercase;
+  border-radius: 8px;
+  background-color: #212121;
+  width: 100%;
+  padding: 16px;
+  max-height: 30vh;
+  overflow-y: scroll;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.5;
+  resize: none;
+  box-sizing: border-box;
+}
+
+#input::placeholder {
+  color: #aaaaaa;
+}
+
+*:focus {
+  outline: none;
+}
+
+#output-area {
+  width: calc(100% - 128px);
+  max-width: 568px;
+  margin: 48px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#spacer {
+  width: 100%;
+  height: 104px;
+  box-sizing: border-box;
+}
+
+.text {
+  width: 100%;
+  margin: 16px;
+  color: white;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.response {
+  width: 100%;
+  margin: 16px 16px 48px;
+  color: white;
+  font-size: 16px;
+  line-height: 1.5;
+  animation: glow 8s infinite;
+  word-wrap: break-word;
+}
+
+.error {
+  width: 100%;
+  margin: 16px;
+  color: #ff8080;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.error .copy-button {
+  display: none;
+}
+
+.copy-button {
+  font-family: 'DIN2014', sans-serif;
+  text-transform: uppercase;
+  padding: 8px;
+  border: solid;
+  border-width: 1px;
+  border-radius: 8px;
+  background: none;
+  color: #aaaaaa;
+  border-color: #aaaaaa;
+  font-size: 11px;
+  line-height: 1.5;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 4px;
+  transform: translateX(calc(-100% - 24px));
+  opacity: 0;
+}
+
+.copy-button:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.copy-button:active {
+  color: #000000;
+  border-color: #ffffff;
+  background-color: #ffffff;
+}
+
+.response:hover .copy-button {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .response {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .copy-button {
+    position: relative;
+    margin: 16px 0 4px;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+#send-button {
+  font-family: 'DIN2014', sans-serif;
+  text-transform: uppercase;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #212121;
+  color: #aaaaaa;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+#send-button:hover:not(.loading) {
+  color: #ffffff;
+}
+
+#send-button.loading {
+  cursor: default;
+}
+
+#send-button.empty {
+  cursor: default;
+  color: #555555;
+}
+
+#send-button.empty:hover {
+  color: #555555;
+}
+
+p {
+  margin: 0;
+}
+
+.ellipsis {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  right: 16px;
+  font-size: 1.2em; /* adjust the size of the ellipsis */
+}
+
+#dot-a {
+  animation: ellipsis 1s infinite;
+  animation-delay: 0.25s;
+}
+
+#dot-b {
+  animation: ellipsis 1s infinite;
+  animation-delay: 0.5s;
+}
+
+#dot-c {
+  animation: ellipsis 1s infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes ellipsis {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes glow {
+  0% {
+    color: #ffadad;
+  }
+  12.5% {
+    color: #ffd6a5;
+  }
+  25% {
+    color: #fdffb6;
+  }
+  37.5% {
+    color: #caffbf;
+  }
+  50% {
+    color: #9bf6ff;
+  }
+  62.5% {
+    color: #a0c4ff
+  }
+  75% {
+    color: #bdb2ff;
+  }
+  87.5% {
+    color: #ffc6ff;
+  }
+  100% {
+    color: #ffadad;
+  }
+}
