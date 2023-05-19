@@ -72,7 +72,7 @@ Here is my prompt:
 ```
 
 ## Final Prompt
-My final prompt utilized two main features which allowed it to function much better than the previous iterations. First, it gave a very specific description of what defined obscure artists. Second, and more importantly, it utilized a tree-based approach the generate the recommendations. This solved the two big problems which plagued the previous versions of the prompt: 1) it would now recommend genuinely underground music, rather than well-known music and 2) it would now make novel suggestions even when prompted with the same tastes.
+My final prompt utilized two main features which allowed it to function much better than the previous iterations. First, it gave a very specific description of what defined obscure artists. Second, and more importantly, it utilized a tree-based approach the generate the recommendations. This solved the two big problems which plagued the previous versions of the prompt: 1) it would now recommend underground music, rather than well-known music and 2) it would now make novel suggestions even when prompted with the same tastes.
 
 ```
 As a music curator AI, your task is to use a tree-based recommendation process to suggest 3 underground/low exposure artists, songs, albums, mixtapes, etc. based on my provided music preferences. The recommendations should heavily prioritize obscurity over well-known options. The goal is to generate a pool of extremely obscure recommendations by recursively expanding the recommendations based on the characteristics of the initial choices, until you've built a pool of incredibly underground recommendations that are unknown to most and considered hidden even amongst niche music enthusiasts. Your selection should represent the pinnacle of obscurity, catering to my desire for the most unheard-of music experiences.
@@ -99,7 +99,7 @@ Consider these factors for the analysis:
 
 After presenting the individual recommendations, provide a comprehensive analysis that links my tastes with your recommendations. Highlight patterns in my tastes, similarities and differences between my tastes and your recommendations, and potential reasons for my enjoyment of certain music. Uncover any unique or unexpected connections you find. The full analysis should be the core of your response, with individual song analyses serving to support this. Prioritize the preferences I provide now over any previous ones.
 
-Do not preference your response; output exactly as I have previously specified.
+Do not preface your response; output exactly as I have previously specified.
 
 Now, start the tree-based recommendation process and generate a response that balances both the individual recommendation analyses and the full analysis based on my preferences.
 
